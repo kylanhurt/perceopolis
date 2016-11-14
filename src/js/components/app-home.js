@@ -3,8 +3,13 @@ import React from 'react';
 
 export default () => {
 	return(
-		<div>
-			This is the home
+		<div className="main-cont-area app-home">
+			<div className="jumbotron col-lg-8 col-lg-offset-2">
+				<p>Placeholder for welcome panel</p>
+			</div>
+			<div className="col-lg-8 col-lg-offset-2">
+				<p>Placeholder for Homepage table</p>
+			</div>
 		</div>
 	)
 }

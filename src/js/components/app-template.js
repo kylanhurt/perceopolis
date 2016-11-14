@@ -6,7 +6,7 @@ import Home from './app-home';
 
 export default (props) => {
 	return(
-		<div >
+		<div className="container">
 			<Header></Header>
 			{ props.children }
 			<Footer></Footer>

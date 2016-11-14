@@ -2,7 +2,7 @@ import React from 'react';
 
 export default () => {
 	return(
-		<div>
+		<div className="row" style={{clear: "both"}}>
             <nav className="navbar navbar-inverse navbar-fixed-top" >
                 <div className="container">
                     <div className="navbar-header">
