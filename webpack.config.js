@@ -6,7 +6,7 @@ module.exports = {
     publicPath: '/'
   },
   devServer: {
-    inline: true,
+    inline: true, //inline vs iframe
     contentBase: './dist',
   },
   module: {
