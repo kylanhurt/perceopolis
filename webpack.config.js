@@ -8,6 +8,7 @@ module.exports = {
   devServer: {
     inline: true, //inline vs iframe
     contentBase: './dist',
+    port: 8008
   },
   module: {
     loaders: [
