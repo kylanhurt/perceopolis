@@ -15,29 +15,26 @@ module.exports = function(grunt) {
     },
 
     less: {
-      compileCore: {
-        options: {
-          strictMath: true,
-          sourceMap: true,
-          outputSourceFiles: true,
-          sourceMapURL: '<%= pkg.name %>.css.map',
-          sourceMapFilename: 'dist/css/<%= pkg.name %>.css.map'
-        },
-        src: 'less/bootstrap.less',
-        dest: 'dist/css/<%= pkg.name %>.css'
-      },
-      compileTheme: {
-        options: {
-          strictMath: true,
-          sourceMap: true,
-          outputSourceFiles: true,
-          sourceMapURL: '<%= pkg.name %>-theme.css.map',
-          sourceMapFilename: 'dist/css/<%= pkg.name %>-theme.css.map'
-        },
-        src: 'src/less/main.less',
-        dest: 'dist/css/main.css'
-      }
-    }
+        build: {
+            files : {
+                'dist/css/main.css': 'src/less/main.less'
+            }
+        }
+    },
+
+      // configure cssmin to minify css files ------------------------------------
+      cssmin: {
+          options: {
+              banner: '/*\n <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> \n*/\n'
+          },
+          build: {
+              files: {
+                  'dist/css/style.min.css': 'src/css/style.css'
+              }
+          }
+      } ,
+
+      build: ['Gruntfile.js', 'src/**/*.js']
 
   });
 
