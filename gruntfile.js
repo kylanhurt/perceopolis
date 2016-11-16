@@ -15,18 +15,21 @@ module.exports = function(grunt) {
     },
 
     less: {
-        files: {
-          'dist/css/main.css': 'src/less/main.less',
-          'dist/css/bootstrap.css': 'node_modules/bootstrap/less/bootstrap.less'
-
+        build: {
+            files: {
+                'dist/css/main.css': 'src/less/main.less',
+                'dist/css/bootstrap.css': 'node_modules/bootstrap/less/bootstrap.less'
+            }
         }
       }
 
   });
 
-  grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-contrib-less');
+    grunt.loadNpmTasks('grunt-contrib-jshint');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-less');
+    grunt.loadNpmTasks('grunt-contrib-cssmin');
+    grunt.loadNpmTasks('grunt-contrib-watch');
 
   grunt.registerTask('default', ['jshint']);
 
