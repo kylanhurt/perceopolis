@@ -21,10 +21,10 @@ export default () => {
 
 const AppHome = Object.assign(EventEmitter.prototype, {
 	emitChange() {
-		this.emite(CHANVE_EVENT);
+		this.emit(CHANGE_EVENT);
 	},
 
 	getEntities() {
-		
+
 	}
 })
