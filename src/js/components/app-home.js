@@ -10,11 +10,11 @@ const CHANGE_EVENT = 'change';
 
 var _index = [];
 
-export default () => {
+export default ({entities}) => {
 	return(
 		<div className="main-cont-area app-home">
 			<HomeJumbotron />
-			<HomeTable />			
+			<HomeTable entities={entities}/>			
 		</div>
 	)
 };
