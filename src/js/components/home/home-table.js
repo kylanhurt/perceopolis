@@ -19,9 +19,10 @@ class HomeTable extends React.Component {
 	init(){
 		console.log('inside beginning of home-table init');
 		getEntityIndex('created_at', 10, 'desc')
-		.then(function(data){
-			console.log('inside of home-table init -> then');
+		.then(data => {
+			console.log('inside of home-table init -> then', 'data: ', data);
 			this.setState({entities: data});     
+			console.log('this is now: ', this);			
 		})
 	}
 
