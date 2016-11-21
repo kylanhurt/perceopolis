@@ -8,11 +8,12 @@
   },
   "author": "Kylan Hurt",
   "dependencies": {
-    "axios": "^0.8.0",    
+    "axios": "^0.8.0",
     "flux": "^2.1.1",
     "history": "^2.1.1",
     "react": "^15.1.0",
     "react-dom": "^15.1.0",
+    "react-jwt-auth": "^0.6.0",    
     "react-router": "^2.4.1"
   },
   "devDependencies": {
@@ -30,6 +31,7 @@
     "jquery": "^3.1.1",
     "jshint-stylish": "latest",
     "react-dom": "^15.3.2",
+    "react-jwt-auth": "^0.6.0",
     "webpack": "^1.12.3",
     "webpack-dev-server": "^1.14.1"
   }
