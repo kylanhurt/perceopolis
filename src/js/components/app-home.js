@@ -5,6 +5,7 @@ import HomeWelcomeSubmit from './home/home-welcome-submit';
 import {dispatch, register} from '../dispatchers/app-dispatcher';
 import AppConstants from '../constants/app-constants';
 import {EventEmitter} from 'events';
+import Redux from 'redux';
 //import StoreWatchMixin from '../../mixins/StoreWatchMixin.js'
 
 const CHANGE_EVENT = 'change';

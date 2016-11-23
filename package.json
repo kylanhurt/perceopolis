@@ -13,7 +13,8 @@
     "history": "^2.1.1",
     "react": "^15.1.0",
     "react-dom": "^15.1.0",
-    "react-jwt-auth": "^0.6.0",    
+    "react-jwt-auth": "^0.6.0",
+    "react-redux": "^4.4.6",
     "react-router": "^2.4.1"
   },
   "devDependencies": {
@@ -32,6 +33,7 @@
     "jshint-stylish": "latest",
     "react-dom": "^15.3.2",
     "react-jwt-auth": "^0.6.0",
+    "redux": "^3.6.0",
     "webpack": "^1.12.3",
     "webpack-dev-server": "^1.14.1"
   }
