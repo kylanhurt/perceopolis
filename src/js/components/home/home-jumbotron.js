@@ -25,18 +25,32 @@ export default class HomeJumbotron extends React.Component {
   registerUser(e) {
   	console.log('this:' , this, 'e is:', e, 'this.state', this.state);
   	e.preventDefault();
+  	let data = {
+			email: this.state.credentials.email.value,
+			password: this.state.credentials.password.value
+  	};
+
   	axios({
   		method: 'POST',
   		url: 'http://localhost/api/user/register',
   		headers: {
 		    'Content-Type': 'application/json'
   		},
-  		data: {
-  			email: this.state.credentials.email.value,
-  			password: this.state.credentials.password.value
-  		}
+  		data: data
   	}).then(function(response) {
   		console.log('response is: ', response);
+  		if(response.data.code === 1){
+  			console.log('response code is: ', response.data.code);
+  			console.log('data is: ', data);
+	  		axios({
+	  			method: 'POST',
+	  			url: 'http://localhost/api/authenticate',
+	  			params: data
+	  		})  			
+  		} else {
+  			console.log('response code is: ', response.data.code);
+  		}
+
   	})
   	//axios.post('http://localhost/api/user/register', {email: this.state.credentials.loginEmail,password: this.state.credentials.loginPassword})
   }
