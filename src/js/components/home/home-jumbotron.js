@@ -12,9 +12,9 @@ export default class HomeJumbotron extends React.Component {
 	      user: '',
 	      password: ''
     	}
-
     };
   }
+
 
   loginUser(e) {
   	console.log('this:' , this, 'e is:', e, 'this.state', this.state);
@@ -29,7 +29,7 @@ export default class HomeJumbotron extends React.Component {
 			email: this.state.credentials.email.value,
 			password: this.state.credentials.password.value
   	};
-
+  	var self = this;
   	axios({
   		method: 'POST',
   		url: 'http://localhost/api/user/register',
@@ -42,13 +42,21 @@ export default class HomeJumbotron extends React.Component {
   		if(response.data.code === 1){
   			console.log('response code is: ', response.data.code);
   			console.log('data is: ', data);
+  			self.setState({userName : data.email});
 	  		axios({
 	  			method: 'POST',
 	  			url: 'http://localhost/api/authenticate',
 	  			params: data
-	  		})  			
+	  		}).then(function(response2) {
+		  		console.log('response2 is: ' , response2);
+		  		if(response2.data.token) {
+		  			self.setState({token: response2.data.token });
+		  		} else {
+		  			console.log('invalid or no token received from server');
+		  		}
+		  	})  			
   		} else {
-  			console.log('response code is: ', response.data.code);
+  			console.log('register response code is: ', response.data.code);
   		}
 
   	})
